@@ -1,0 +1,83 @@
+// Export pages
+export '/pages/splash_flow/splash_page/splash_page_widget.dart'
+    show SplashPageWidget;
+export '/pages/splash_flow/onboarding_page/onboarding_page_widget.dart'
+    show OnboardingPageWidget;
+export '/pages/splash_flow/demo_page/demo_page_widget.dart' show DemoPageWidget;
+export '/pages/home_flow/home_main_page/home_main_page_widget.dart'
+    show HomeMainPageWidget;
+export '/pages/login_flow/sign_in_page/sign_in_page_widget.dart'
+    show SignInPageWidget;
+export '/pages/login_flow/sign_up_page/sign_up_page_widget.dart'
+    show SignUpPageWidget;
+export '/pages/login_flow/forgot_password_page/forgot_password_page_widget.dart'
+    show ForgotPasswordPageWidget;
+export '/pages/login_flow/verification_page/verification_page_widget.dart'
+    show VerificationPageWidget;
+export '/pages/login_flow/reset_password_page/reset_password_page_widget.dart'
+    show ResetPasswordPageWidget;
+export '/pages/login_flow/forgot_verification_page/forgot_verification_page_widget.dart'
+    show ForgotVerificationPageWidget;
+export '/pages/profile_flow/my_profile_page/my_profile_page_widget.dart'
+    show MyProfilePageWidget;
+export '/pages/profile_flow/edit_profile_page/edit_profile_page_widget.dart'
+    show EditProfilePageWidget;
+export '/pages/profile_flow/notification_page/notification_page_widget.dart'
+    show NotificationPageWidget;
+export '/pages/profile_flow/aboutus_page/aboutus_page_widget.dart'
+    show AboutusPageWidget;
+export '/pages/profile_flow/terms_condition_page/terms_condition_page_widget.dart'
+    show TermsConditionPageWidget;
+export '/pages/profile_flow/privacy_policy_page/privacy_policy_page_widget.dart'
+    show PrivacyPolicyPageWidget;
+export '/pages/profile_flow/settings_page/settings_page_widget.dart'
+    show SettingsPageWidget;
+export '/pages/profile_flow/change_password_page/change_password_page_widget.dart'
+    show ChangePasswordPageWidget;
+export '/pages/home_flow/payment_method_page/payment_method_page_widget.dart'
+    show PaymentMethodPageWidget;
+export '/pages/home_flow/summary_page/summary_page_widget.dart'
+    show SummaryPageWidget;
+export '/pages/home_flow/reviews_page/reviews_page_widget.dart'
+    show ReviewsPageWidget;
+export '/pages/booking_flow/booking_details_page/booking_details_page_widget.dart'
+    show BookingDetailsPageWidget;
+export '/pages/profile_flow/my_reviews_page/my_reviews_page_widget.dart'
+    show MyReviewsPageWidget;
+export '/pages/profile_flow/favorites_page/favorites_page_widget.dart'
+    show FavoritesPageWidget;
+export '/pages/home_flow/cat_related_page/cat_related_page_widget.dart'
+    show CatRelatedPageWidget;
+export '/pages/home_flow/search_page/search_page_widget.dart'
+    show SearchPageWidget;
+export '/pages/booking_flow/add_review_page/add_review_page_widget.dart'
+    show AddReviewPageWidget;
+export '/pages/home_flow/select_date_page/select_date_page_widget.dart'
+    show SelectDatePageWidget;
+export '/pages/home_flow/our_specialists_details_page/our_specialists_details_page_widget.dart'
+    show OurSpecialistsDetailsPageWidget;
+export '/pages/home_flow/our_specialist_page/our_specialist_page_widget.dart'
+    show OurSpecialistPageWidget;
+export '/pages/home_flow/services_details/services_details_widget.dart'
+    show ServicesDetailsWidget;
+export '/pages/home_flow/recommended_page/recommended_page_widget.dart'
+    show RecommendedPageWidget;
+export '/pages/home_flow/coupon_code_page/coupon_code_page_widget.dart'
+    show CouponCodePageWidget;
+export '/pages/home_flow/releted_services_page/releted_services_page_widget.dart'
+    show ReletedServicesPageWidget;
+export '/pages/home_flow/trending_service_page/trending_service_page_widget.dart'
+    show TrendingServicePageWidget;
+export '/pages/profile_flow/rate_us_page/rate_us_page_widget.dart'
+    show RateUsPageWidget;
+export '/pages/profile_flow/f_a_qs_page/f_a_qs_page_widget.dart'
+    show FAQsPageWidget;
+export '/pages/home_flow/blog_page/blog_page_widget.dart' show BlogPageWidget;
+export '/pages/home_flow/blog_detail_page/blog_detail_page_widget.dart'
+    show BlogDetailPageWidget;
+export '/pages/home_flow/recently_viewed_page/recently_viewed_page_widget.dart'
+    show RecentlyViewedPageWidget;
+export '/pages/home_flow/suggested_for_page/suggested_for_page_widget.dart'
+    show SuggestedForPageWidget;
+export '/pages/home_flow/suggestedservice_page/suggestedservice_page_widget.dart'
+    show SuggestedservicePageWidget;

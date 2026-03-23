@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "209538084276",
+    "project_id": "liams-yardand-trash-can-rz1c29",
+    "storage_bucket": "liams-yardand-trash-can-rz1c29.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209538084276:android:80a4cb5fe4228492da56e1",
+        "android_client_info": {
+          "package_name": "com.liamsyardandtrashcanservice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209538084276-960h8355n3gsfve567qirsgtv8n9jg6h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.liamsyardandtrashcanservice",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "209538084276-e18j6m74hc5i9ckmjihlh48lmrr8p5j2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgArs_EHj_b7CtVWm-RmNwQ0USwksN800"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209538084276-e18j6m74hc5i9ckmjihlh48lmrr8p5j2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "209538084276-0cn9e7m45ugucug217u7pt6niol06118.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.liamsyardandtrashcanservice"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
