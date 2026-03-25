@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/components/main_appbar/main_appbar_widget.dart';
-import '/index.dart';
 import 'forgot_password_page_widget.dart' show ForgotPasswordPageWidget;
 import 'package:flutter/material.dart';
 

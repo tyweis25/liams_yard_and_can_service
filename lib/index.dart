@@ -12,12 +12,8 @@ export '/pages/login_flow/sign_up_page/sign_up_page_widget.dart'
     show SignUpPageWidget;
 export '/pages/login_flow/forgot_password_page/forgot_password_page_widget.dart'
     show ForgotPasswordPageWidget;
-export '/pages/login_flow/verification_page/verification_page_widget.dart'
-    show VerificationPageWidget;
 export '/pages/login_flow/reset_password_page/reset_password_page_widget.dart'
     show ResetPasswordPageWidget;
-export '/pages/login_flow/forgot_verification_page/forgot_verification_page_widget.dart'
-    show ForgotVerificationPageWidget;
 export '/pages/profile_flow/my_profile_page/my_profile_page_widget.dart'
     show MyProfilePageWidget;
 export '/pages/profile_flow/edit_profile_page/edit_profile_page_widget.dart'
@@ -81,3 +77,7 @@ export '/pages/home_flow/suggested_for_page/suggested_for_page_widget.dart'
     show SuggestedForPageWidget;
 export '/pages/home_flow/suggestedservice_page/suggestedservice_page_widget.dart'
     show SuggestedservicePageWidget;
+export '/pages/login_flow/sign_in_page_copy/sign_in_page_copy_widget.dart'
+    show SignInPageCopyWidget;
+export '/pages/login_flow/sign_up_page_copy/sign_up_page_copy_widget.dart'
+    show SignUpPageCopyWidget;

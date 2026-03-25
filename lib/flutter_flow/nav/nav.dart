@@ -78,14 +78,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomeMainPageWidget() : SplashPageWidget(),
+          appStateNotifier.loggedIn ? HomeMainPageWidget() : SignInPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
               ? HomeMainPageWidget()
-              : SplashPageWidget(),
+              : SignInPageWidget(),
         ),
         FFRoute(
           name: SplashPageWidget.routeName,
@@ -105,6 +105,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: HomeMainPageWidget.routeName,
           path: HomeMainPageWidget.routePath,
+          requireAuth: true,
           builder: (context, params) => HomeMainPageWidget(),
         ),
         FFRoute(
@@ -133,29 +134,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ForgotPasswordPageWidget(),
         ),
         FFRoute(
-          name: VerificationPageWidget.routeName,
-          path: VerificationPageWidget.routePath,
-          builder: (context, params) => VerificationPageWidget(
-            email: params.getParam(
-              'email',
-              ParamType.String,
-            ),
-          ),
-        ),
-        FFRoute(
           name: ResetPasswordPageWidget.routeName,
           path: ResetPasswordPageWidget.routePath,
           builder: (context, params) => ResetPasswordPageWidget(),
-        ),
-        FFRoute(
-          name: ForgotVerificationPageWidget.routeName,
-          path: ForgotVerificationPageWidget.routePath,
-          builder: (context, params) => ForgotVerificationPageWidget(
-            email: params.getParam(
-              'email',
-              ParamType.String,
-            ),
-          ),
         ),
         FFRoute(
           name: MyProfilePageWidget.routeName,
@@ -401,6 +382,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: SuggestedservicePageWidget.routeName,
           path: SuggestedservicePageWidget.routePath,
           builder: (context, params) => SuggestedservicePageWidget(),
+        ),
+        FFRoute(
+          name: SignInPageCopyWidget.routeName,
+          path: SignInPageCopyWidget.routePath,
+          builder: (context, params) => SignInPageCopyWidget(
+            isInner: params.getParam(
+              'isInner',
+              ParamType.bool,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: SignUpPageCopyWidget.routeName,
+          path: SignUpPageCopyWidget.routePath,
+          builder: (context, params) => SignUpPageCopyWidget(
+            isInner: params.getParam(
+              'isInner',
+              ParamType.bool,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -573,7 +574,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/splashPage';
+            return '/signInPage';
           }
           return null;
         },

@@ -9,28 +9,29 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-import 'sign_up_page_model.dart';
-export 'sign_up_page_model.dart';
+import 'sign_up_page_copy_model.dart';
+export 'sign_up_page_copy_model.dart';
 
-class SignUpPageWidget extends StatefulWidget {
-  const SignUpPageWidget({
+class SignUpPageCopyWidget extends StatefulWidget {
+  const SignUpPageCopyWidget({
     super.key,
     bool? isInner,
   }) : this.isInner = isInner ?? true;
 
   final bool isInner;
 
-  static String routeName = 'SignUpPage';
-  static String routePath = '/signUpPage';
+  static String routeName = 'SignUpPageCopy';
+  static String routePath = '/signUpPageCopy';
 
   @override
-  State<SignUpPageWidget> createState() => _SignUpPageWidgetState();
+  State<SignUpPageCopyWidget> createState() => _SignUpPageCopyWidgetState();
 }
 
-class _SignUpPageWidgetState extends State<SignUpPageWidget>
+class _SignUpPageCopyWidgetState extends State<SignUpPageCopyWidget>
     with TickerProviderStateMixin {
-  late SignUpPageModel _model;
+  late SignUpPageCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -39,7 +40,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SignUpPageModel());
+    _model = createModel(context, () => SignUpPageCopyModel());
 
     _model.firstNameTextController ??=
         TextEditingController(text: FFAppState().userDetailQA.firstName);
@@ -62,7 +63,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget>
     _model.textFieldFocusNode ??= FocusNode();
 
     animationsMap.addAll({
-      'rowOnPageLoadAnimation': AnimationInfo(
+      'rowOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           FadeEffect(
@@ -146,6 +147,42 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget>
           ),
         ],
       ),
+      'rowOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 250.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'containerOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 300.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'containerOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 300.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -186,7 +223,6 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget>
               decoration: BoxDecoration(),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
@@ -257,7 +293,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget>
                         ),
                       ].divide(SizedBox(width: 8.0)),
                     ).animateOnPageLoad(
-                        animationsMap['rowOnPageLoadAnimation']!),
+                        animationsMap['rowOnPageLoadAnimation1']!),
                   ),
                   Expanded(
                     child: Form(
@@ -385,7 +421,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget>
                                       fontFamily: 'SF Pro Display',
                                       fontSize: 17.0,
                                       letterSpacing: 0.0,
-                                      lineHeight: 0.5,
+                                      lineHeight: 1.0,
                                     ),
                                 cursorColor:
                                     FlutterFlowTheme.of(context).primaryText,
@@ -520,7 +556,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget>
                                       fontFamily: 'SF Pro Display',
                                       fontSize: 17.0,
                                       letterSpacing: 0.0,
-                                      lineHeight: 0.5,
+                                      lineHeight: 1.0,
                                     ),
                                 cursorColor:
                                     FlutterFlowTheme.of(context).primaryText,
@@ -653,7 +689,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget>
                                       fontFamily: 'SF Pro Display',
                                       fontSize: 17.0,
                                       letterSpacing: 0.0,
-                                      lineHeight: 0.5,
+                                      lineHeight: 1.0,
                                     ),
                                 keyboardType: TextInputType.emailAddress,
                                 cursorColor:
@@ -792,7 +828,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget>
                                       fontFamily: 'SF Pro Display',
                                       fontSize: 17.0,
                                       letterSpacing: 0.0,
-                                      lineHeight: 0.5,
+                                      lineHeight: 1.0,
                                     ),
                                 keyboardType: TextInputType.visiblePassword,
                                 cursorColor:
@@ -932,7 +968,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget>
                                       fontFamily: 'SF Pro Display',
                                       fontSize: 17.0,
                                       letterSpacing: 0.0,
-                                      lineHeight: 0.5,
+                                      lineHeight: 1.0,
                                     ),
                                 keyboardType: TextInputType.visiblePassword,
                                 cursorColor:
@@ -1050,6 +1086,167 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget>
                               ),
                             ).animateOnPageLoad(
                                 animationsMap['buttonOnPageLoadAnimation']!),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                valueOrDefault<double>(
+                                  FFAppConstants.primaryPadding,
+                                  0.0,
+                                ),
+                                16.0,
+                                valueOrDefault<double>(
+                                  FFAppConstants.primaryPadding,
+                                  0.0,
+                                ),
+                                16.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    width: double.infinity,
+                                    height: 1.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .containerColor,
+                                    ),
+                                  ),
+                                ),
+                                Text(
+                                  'Or',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 1,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'SF Pro Display',
+                                        fontSize: 15.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                        lineHeight: 1.47,
+                                      ),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    width: double.infinity,
+                                    height: 1.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .containerColor,
+                                    ),
+                                  ),
+                                ),
+                              ].divide(SizedBox(width: 8.0)),
+                            ).animateOnPageLoad(
+                                animationsMap['rowOnPageLoadAnimation2']!),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                valueOrDefault<double>(
+                                  FFAppConstants.primaryPadding,
+                                  0.0,
+                                ),
+                                0.0,
+                                valueOrDefault<double>(
+                                  FFAppConstants.primaryPadding,
+                                  0.0,
+                                ),
+                                16.0),
+                            child: Container(
+                              width: double.infinity,
+                              height: 56.0,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(16.0),
+                                border: Border.all(
+                                  color:
+                                      FlutterFlowTheme.of(context).borderColor,
+                                ),
+                              ),
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(0.0),
+                                    child: SvgPicture.asset(
+                                      'assets/images/google_py.svg',
+                                      width: 24.0,
+                                      height: 24.0,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Google',
+                                    textAlign: TextAlign.start,
+                                    maxLines: 1,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'SF Pro Display',
+                                          fontSize: 18.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          lineHeight: 1.5,
+                                        ),
+                                  ),
+                                ].divide(SizedBox(width: 8.0)),
+                              ),
+                            ).animateOnPageLoad(animationsMap[
+                                'containerOnPageLoadAnimation1']!),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                valueOrDefault<double>(
+                                  FFAppConstants.primaryPadding,
+                                  0.0,
+                                ),
+                                0.0,
+                                valueOrDefault<double>(
+                                  FFAppConstants.primaryPadding,
+                                  0.0,
+                                ),
+                                0.0),
+                            child: Container(
+                              width: double.infinity,
+                              height: 56.0,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(16.0),
+                                border: Border.all(
+                                  color:
+                                      FlutterFlowTheme.of(context).borderColor,
+                                ),
+                              ),
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.apple,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 24.0,
+                                  ),
+                                  Text(
+                                    'Apple',
+                                    textAlign: TextAlign.start,
+                                    maxLines: 1,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'SF Pro Display',
+                                          fontSize: 18.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          lineHeight: 1.5,
+                                        ),
+                                  ),
+                                ].divide(SizedBox(width: 8.0)),
+                              ),
+                            ).animateOnPageLoad(animationsMap[
+                                'containerOnPageLoadAnimation2']!),
                           ),
                         ],
                       ),

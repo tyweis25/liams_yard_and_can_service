@@ -156,7 +156,7 @@ class _ProfileComponentWidgetState extends State<ProfileComponentWidget> {
                             ),
                           ),
                         ),
-                      if (FFAppState().isLoginQA)
+                      if (!FFAppState().isLoginQA)
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               valueOrDefault<double>(
@@ -717,6 +717,8 @@ class _ProfileComponentWidgetState extends State<ProfileComponentWidget> {
                                   );
                                 },
                               ).then((value) => safeSetState(() {}));
+
+                              context.pushNamed(SignInPageWidget.routeName);
                             } else {
                               context.pushNamed(
                                 SignInPageWidget.routeName,

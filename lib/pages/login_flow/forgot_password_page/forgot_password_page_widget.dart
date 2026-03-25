@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/main_appbar/main_appbar_widget.dart';
 import '/actions/actions.dart' as action_blocks;
-import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'forgot_password_page_model.dart';
@@ -264,16 +263,6 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
                                     !_model.formKey.currentState!.validate()) {
                                   return;
                                 }
-
-                                context.pushNamed(
-                                  ForgotVerificationPageWidget.routeName,
-                                  queryParameters: {
-                                    'email': serializeParam(
-                                      _model.textController.text,
-                                      ParamType.String,
-                                    ),
-                                  }.withoutNulls,
-                                );
                               } else {
                                 await action_blocks.internetCheck(context);
                                 safeSetState(() {});
